@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row d-flex justify-content-center ">
+    <div class="my-carousel row  w-75 m-auto">
+      <div class="car-body py-3 my-3 col-9">
+
+        <img onError="this.src='../../../assets/imgs/blank-img.png'" [src]='shownImg' class="w-100 shown-imgs   shown-img" alt="">
+      </div>
+      <div class="car-imgs-cont col-3 d-flex flex-column ">
+
+        <img *ngFor="let img of imgs ; let i=index" src={{img}}  (click)="showImg(i)" class="w-100  mt-1 h-25 shown-imgs" alt="">
+
+
+      </div>
+
+
+      <div class="car-footer col-12 justify-content-between w-75 m-auto row mb-3">
+        <div class="col-6 ">
+          <input id='addInp' hidden multiple (change)="addImg($event)" type="file">
+          <label *ngIf="imgs.length <5" for="addInp" class="btn me-2 btn-success">Add {{5-imgs.length}} Imgs </label>
+          <button (click)="delimg()" class=" btn btn-outline-danger">Delete This Img</button>
+        </div>
+        <div class="col-6">
+          <button [disabled]="!shownImg" (click)="getPrevious()" class="btn me-2 btn-outline-dark"> &lt;&lt; Previous</button>
+          <button [disabled]="!shownImg" (click)="getNext()" class="btn me-2 btn-dark"> Next &gt; &gt; </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

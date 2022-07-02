@@ -1,0 +1,17 @@
+h3 {
+
+font-family: 'Papyrus';
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  height: 96vh;
+
+}
+.container-fluid
+{
+  width: 98vw;
+  margin: 0;
+  padding: 0;
+
+}
